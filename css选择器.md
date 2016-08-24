@@ -4,7 +4,7 @@
 
 通配符是全局的设定的CSS样式，也就是设置了之后整个界面都会采用的样式。
 
-```css
+```markdown
 
 <style>
 
@@ -24,7 +24,7 @@
 
 标签选择器就是选择html对应的标签名字，然后设定CSS样式。
 
-```css
+```markdown
 
 <style>
 
@@ -50,7 +50,7 @@
 
 类选择器就是设置一个类名，然后通过.类名来进行设置。
 
-```css
+```markdown
 <style>
 
  .high {
@@ -75,7 +75,7 @@ class里面输入的是类名，使用类选择器，要使用.跟上类名来�
 
 id选择器就是使用id=""来定义，但是设置CSS那边，要使用#来进行标记。
 
-```css
+```markdown
 
 <style>
 
@@ -99,7 +99,7 @@ id选择器就是使用id=""来定义，但是设置CSS那边，要使用#来进
 
 并联选择器顾名思义就是或选择器，中间用，号进行隔开，表示只要满足相关的，都采用下面的CSS的样式。
 
-```css
+```markdown
 
 <style>
 
@@ -129,7 +129,7 @@ id选择器就是使用id=""来定义，但是设置CSS那边，要使用#来进
 
 复合选择相当于与运算，只有同时满足这2个条件，才会添加CSS样式。
 
-```html
+```markdown
 
 <style>
 
@@ -140,8 +140,6 @@ id选择器就是使用id=""来定义，但是设置CSS那边，要使用#来进
  }
 
 </style>
-
-
 
 <body>
 
@@ -161,7 +159,7 @@ id选择器就是使用id=""来定义，但是设置CSS那边，要使用#来进
 
 后代选择器的意思就是一个标签里面包含的其他标签就会采用这种CSS样式。用空格来划分。
 
-```css
+```markdown
 
 <style>
 
@@ -199,7 +197,7 @@ id选择器就是使用id=""来定义，但是设置CSS那边，要使用#来进
 
 **注意：如果div标签里面包含一个div标签，里面的div标签包含一个p标签，那么也满足直接继承关系**
 
-```css
+```markdown
 
 <style>
 
@@ -241,7 +239,7 @@ id选择器就是使用id=""来定义，但是设置CSS那边，要使用#来进
 
 **注意点：如果XX里面包含YY则不会触发，YY无论是在XX上面还是XX下面都是相邻**
 
-```css
+```markdown
 
 <style>
 
@@ -271,7 +269,7 @@ id选择器就是使用id=""来定义，但是设置CSS那边，要使用#来进
 
 所谓的属性选择器，就是在标签中添加属性，通过属性来定位到该标签设置CSS的样式。
 
-```css
+```markdown
 
 <style>
 
@@ -299,15 +297,11 @@ id选择器就是使用id=""来定义，但是设置CSS那边，要使用#来进
 
 <body>
 
+    <span name="xx">我是属性选择器的span1</span><br>
 
+    <span name="xx" age="20">我是属性选择器span2</span>
 
-<span name="xx">我是属性选择器的span1</span><br>
-
-<span name="xx" age="20">我是属性选择器span2</span>
-
-<span name="YY">我是属性选择span3</span>
-
-
+    <span name="YY">我是属性选择span3</span>
 
 </body>
 
@@ -323,7 +317,7 @@ id选择器就是使用id=""来定义，但是设置CSS那边，要使用#来进
 
 ![](/assets/伪元素.png)
 
-```css
+```markdown
 
 <style>
 
@@ -351,13 +345,20 @@ id选择器就是使用id=""来定义，但是设置CSS那边，要使用#来进
 
 important的在任何选择器中使用!important进行标记，然后强制使用该css样式。
 
-```html
+```markdown
 
- <style> *{ color: blue !important; font-size: 40px; }
+ <style> 
 
- div{ color: red; font-size: 20px; }</style>
+    *{ 
+        color: blue !important; font-size: 40px; 
+    }
+    div{ color: red; font-size: 20px; }
 
-<body> <div>你好,世界</div></body>
+ </style>
+
+<body> 
+    <div>你好,世界</div>
+</body>
 
 ```
 
@@ -374,6 +375,5 @@ important的在任何选择器中使用!important进行标记，然后强制使�
 **选择器的权值进行相加，越大的越优先，如果权值相同，则使用就近原则。**
 
 优先级排序：important > 行内css > id > 类 | 伪类 | 属性选择 | 伪元素 > 通配符 > 继承
-
 
 ![](/assets/伪类.png)
